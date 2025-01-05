@@ -25,7 +25,7 @@
 
 # Animals4Life VPC
 resource "aws_vpc" "test-vpc1" {
-  cidr_block           = "10.9.8.0/16"
+  cidr_block           = "10.9.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
   instance_tenancy     = "default"
