@@ -42,3 +42,11 @@ resource "aws_internet_gateway" "test-vpc1-igw" {
 output "test_vpc_id" {
   value = aws_vpc.test-vpc1.id
 }
+
+# Security Group
+resource "aws_security_group" "blog" {
+  name        = "blog"
+  description = "Allow http and https in. Allow everything out"
+
+  vpc_id = aws_vpc.test-vpc1.id
+}
