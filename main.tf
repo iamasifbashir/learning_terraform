@@ -24,21 +24,21 @@
 # }
 
 # Animals4Life VPC
-# resource "aws_vpc" "test-vpc1" {
-#   cidr_block           = "10.9.0.0/16"
-#   enable_dns_support   = true
-#   enable_dns_hostnames = true
-#   instance_tenancy     = "default"
+resource "aws_vpc" "test-vpc1" {
+  cidr_block           = "10.9.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  instance_tenancy     = "default"
 
-#   tags = {
-#     Name = "test-vpc1"
-#   }
-# }
+  tags = {
+    Name = "test-vpc1"
+  }
+}
 
-# resource "aws_internet_gateway" "test-vpc1-igw" {
-#   vpc_id = aws_vpc.test-vpc1.id
-# }
+resource "aws_internet_gateway" "test-vpc1-igw" {
+  vpc_id = aws_vpc.test-vpc1.id
+}
 
-# output "test_vpc_id" {
-#   value = aws_vpc.test-vpc1.id
-# }
+output "test_vpc_id" {
+  value = aws_vpc.test-vpc1.id
+}
